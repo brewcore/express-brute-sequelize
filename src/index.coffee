@@ -16,11 +16,15 @@ module.exports = class bruteStore
       count: {type: Sequelize.INTEGER}
     })
 
-    @_table.sync().then =>
-      console.log "bruteStore initialized - table #{table} created" if @options.logging
-      return callback(@)
-    .catch =>
-      console.log "Failed to initialize bruteStore - table #{table}" if @options.logging
+    if !@options.disableAutoSync
+      @_table.sync().then =>
+        console.log "bruteStore initialized - table #{table} created" if @options.logging
+        return callback(@)
+      .catch =>
+        console.log "Failed to initialize bruteStore - table #{table}" if @options.logging
+        return callback(@)
+    else
+      console.log "Automatic table creation is disabled. You must manually create table '#{table}' with the correct structure." if @options.logging
       return callback(@)
 
   set:(key, value, lifetime, callback) ->

@@ -1,6 +1,7 @@
 {
-  "name": "express-brute-sequelize",
-  "version": "0.0.8",
+  "name": "express-brute-sequelize-noauto",
+  "version": "0.0.1",
+  "private": true,
   "description": "Sequelize store for express-brute",
   "main": "index.js",
   "scripts": {
@@ -18,13 +19,16 @@
     "store"
   ],
   "author": "Sanjay Hadiya",
+  "contributors": [
+    "Tyler Golden"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maddy2get/express-brute-sequelize.git"
+    "url": "https://github.com/brewcore/express-brute-sequelize.git"
   },
   "devDependencies": {
-    "coffee-script": "^1.12.7",
+    "coffeescript": "^2.3.1",
     "docco": "^0.7.0",
     "expect": "^21.2.1",
     "mocha": "^4.0.1",
